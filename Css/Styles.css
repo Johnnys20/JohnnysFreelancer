@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700; 1.900&display=intercambio');
+/* Tipo de letra*/
+
+
+/* Explicacion del reset que utilizaremos a continuacion tambien conocido como CSS Root Em" o "REM-Based Scaling". A veces también se refiere a esto como "10px REM Base */
+
+/* 
+Nombre Común: "REM-Based Scaling"
+Nombre Vulgar: "10px REM Base"
+Otra Denominación: "CSS Root Em" 
+*/
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 16px;
+}
+
+/* selector de atributos */
+
+/* [href="#"]{
+    color: aqua;
+} */
+
+/* Escalabilidad y Consistencia:
+
+Al establecer html { font-size: 62.5%; }, estás configurando el tamaño de la fuente base del documento a un 62.5% del tamaño de la fuente predeterminado del navegador, que generalmente es de 16px.
+El 62.5% de 16px es 10px. Esto se hace para que sea más fácil trabajar con unidades rem y em, ya que 1rem o 1em equivaldrá a 10px.
+Fácil Conversión:
+
+Usando font-size: 62.5%, puedes convertir más fácilmente píxeles a rems. Por ejemplo, si quieres que un elemento tenga un tamaño de 20px, simplemente usas 2rem. Esto hace que las matemáticas sean más sencillas porque estás trabajando en un sistema base 10.
+Flexibilidad y Accesibilidad:
+
+Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya que estos valores son relativos. Los tamaños de fuente y otros elementos se escalarán adecuadamente si un usuario ajusta el tamaño de la fuente predeterminado en su navegador. */
+
+
+/* Este reseteo se utiliza para mejorara la forma de uso de la unidad de medida rem por defecto esta medida no es exacta por esto se realizan estos dos reseteos  */
+
+/* ...................................................................................... */
+
+/* Reseteo General*/
+
+
+/* Custom property */
+:root{
+    --PrimaryColor:orange;
+    --secondColor:rgb(15, 134, 138);
+    --Blanco:white;
+    --Oscuro:black;
+}
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilos body y header */
+.body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.header span {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+
+.navbar {
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--secondColor);
+}
+
+.navbar ul li {
+    display: inline-block;
+    padding: 1rem 0;
+}
+
+.navbar ul li a {
+    padding: 2rem 7rem;
+    color: var(--Blanco);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar ul li a:hover {
+    color: var(--Oscuro);
+    background-color: var(--PrimaryColor);
+
+}
+
+/* Estilos Sesion presentacion */
+
+.section__presentacion {
+    display: flex;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../Img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.pressentacion__content h2 {
+    color: var(--Blanco);
+    font-weight: 800;
+    margin-bottom: 4rem;
+}
+
+.header__ubicacion {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.header__ubicacion a {
+    font-size: 4rem;
+    color: var(--PrimaryColor);
+    padding: 0 0.3rem;
+}
+
+.header__ubicacion p {
+    color: var(--Blanco);
+    font-size: 1.4rem;
+}
+
+.btn-1 {
+    display: inline-block;
+    background-color: var(--secondColor);
+    padding: 0.5rem 3rem;
+    color: var(--Blanco);
+    font-weight: 800;
+    border-radius: 0.8rem;
+    transition-property: background-color border-radius;
+    transition-duration: 1000ms;
+
+}
+
+.btn-1:hover {
+    background-color: var(--PrimaryColor);
+    color: var(--Oscuro);
+    border-radius: 0;
+}
