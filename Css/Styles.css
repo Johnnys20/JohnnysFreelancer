@@ -58,6 +58,12 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     list-style: none;
 }
 
+.container{
+    width: 120rem;
+    margin: 0 auto;
+}
+
+
 /* Estilos body y header */
 .body {
     font-family: "Roboto", sans-serif;
@@ -76,7 +82,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     padding: 1rem 0;
 }
 
-.navbar {
+.nav-bg {
     overflow: hidden;
     text-align: center;
     background-color: var(--secondColor);
