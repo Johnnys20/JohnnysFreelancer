@@ -49,6 +49,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     --secondColor:rgb(15, 134, 138);
     --Blanco:white;
     --Oscuro:black;
+    --Gris:grey;
 }
 * {
     box-sizing: border-box;
@@ -59,7 +60,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 }
 
 .container{
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -69,6 +70,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
+
 
 .header h1 {
     text-align: center;
@@ -82,6 +84,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     padding: 1rem 0;
 }
 
+/* div auxiliar */
 .nav-bg {
     overflow: hidden;
     text-align: center;
@@ -97,7 +100,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 .navbar ul li a {
     color: var(--Blanco);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 3rem 0.8rem;
 }
 
@@ -119,6 +122,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .pressentacion__content h2 {
@@ -161,4 +165,86 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     background-color: var(--PrimaryColor);
     color: var(--Oscuro);
     border-radius: 0;
+}
+
+/* Estilos main */
+
+.content{
+    box-shadow: 0 0 0.4rem 0 var(--Gris);
+    padding: 5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main{
+    text-align: center;
+}
+
+.main h2{
+    margin-bottom: 3rem;
+    
+}
+
+.services__content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.services__content section h3{
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    color: var(--secondColor);
+}
+
+.services__content section .item{
+    display: inline-block;
+    font-size: 2rem;
+    background-color: var(--PrimaryColor);
+    color: black;
+    padding: 6rem;
+    border-radius: 100%;
+    margin-bottom: 2rem;
+}
+
+.services__content section .Aplicaciones_Moviles{
+    display: inline-block;
+    font-size: 2rem;
+    background-color: var(--PrimaryColor);
+    padding: 5.5rem 4rem;
+    border-radius: 100% 100%;
+    margin-bottom: 2rem;
+
+}
+
+.services__content section .Aplicaciones_Moviles a{
+    color: black;
+    padding: 0.5rem;
+}
+
+
+/* practica responsive media query */
+
+/* responsive Iphone XR */
+
+@media (max-width:480px ) {
+    .navbar ul li{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar ul li a{
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar ul li a:hover{
+        margin: 0;
+        padding: 0;
+    }
+
+
 }
