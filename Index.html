@@ -42,13 +42,14 @@
     </section>
 
     <div class="content">
-
         <main class="main">
             <h2>Mis Servicios</h2>
             <div class="services__content">
                 <section>
                     <h3>Diseño Web</h3>
-                    <a href="#" class="fa-solid fa-palette item"></a>
+                    <div class="item">
+                        <a href="#" class="fa-solid fa-palette"></a>
+                    </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id minus obcaecati voluptas! Iusto,
                         amet!
                         Eius, veritatis dicta. Eligendi consectetur accusantium tempora explicabo quo! Hic soluta magnam
@@ -57,7 +58,7 @@
 
                 <section>
                     <h3>Aplicaciones Moviles</h3>
-                    <div class="Aplicaciones_Moviles">
+                    <div class="item">
                         <a href="#" class="fa-brands fa-android"></a>
                         <a href="#" class="fa-brands fa-apple"></a>
                     </div>
@@ -69,7 +70,9 @@
 
                 <section>
                     <h3>E-Commerce</h3>
-                    <a href="#" class="fa-solid fa-credit-card item"></a>
+                    <div class="item">
+                        <a href="#" class="fa-solid fa-credit-card"></a>
+                    </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id minus obcaecati voluptas! Iusto,
                         amet!
                         Eius, veritatis dicta. Eligendi consectetur accusantium tempora explicabo quo! Hic soluta magnam
@@ -79,32 +82,38 @@
         </main>
 
         <section class="Contactos">
-            <h3>Contacto</h3>
-            <form action="#">
+            <h3 class="title_contecto">Contacto</h3>
+            <form action="#" class="formulario">
                 <fieldset>
                     <legend>CONTACTÁNOS LLENANDO TODOS LOS CAMPOS</legend>
-                    <div>
-                        <label for="Name">Nombre</label>
-                        <input type="text" name="Name" id="Name" class="Name" placeholder="Nombre">
-                    </div>
+                    <div class="contenedor__campos">
+                        <div class="campos">
+                            <label for="Name">Nombre</label>
+                            <input type="text" name="Name" id="Name" class="text" placeholder="Nombre">
+                        </div>
 
-                    <div>
-                        <label for="phone">Teléfono</label>
-                        <input type="text" name="phone" id="phone" class="phone" placeholder="Teléfono"><br><br>
-                    </div>
+                        <div class="campos">
+                            <label for="phone">Teléfono</label>
+                            <input type="text" name="phone" id="phone" class="text" placeholder="Teléfono"><br><br>
+                        </div>
 
-                    <div>
-                        <label for="Mail">Email</label>
-                        <input type="email" name="Mail" id="Mail" class="Mail" placeholder="Mail"><br><br>
-                    </div>
+                        <div class="campos">
+                            <label for="Mail">Email</label>
+                            <input type="email" name="Mail" id="Mail" class="text" placeholder="Mail"><br><br>
+                        </div>
 
-                    <div>
-                        <label for="Message">Mensaje</label>
-                        <textarea name="Message" id="Message"></textarea>
+                        <div class="campos">
+                            <label for="Message">Mensaje</label>
+                            <textarea name="Message" id="Message" class="text"></textarea>
+                        </div>
+                    </div> <!--contenedor de los campos---> 
+
+                    <div class="content_btn-2">
+                        <a href="#" class="btn-2">Enviar</a>
                     </div>
                 </fieldset>
             </form>
-            <a href="#" class="btn-1">Enviar</a>
+
         </section>
 
     </div>

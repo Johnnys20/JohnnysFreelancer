@@ -10,20 +10,6 @@ Nombre Vulgar: "10px REM Base"
 Otra Denominación: "CSS Root Em" 
 */
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 16px;
-}
-
-/* selector de atributos */
-
-/* [href="#"]{
-    color: aqua;
-} */
-
 /* Escalabilidad y Consistencia:
 
 Al establecer html { font-size: 62.5%; }, estás configurando el tamaño de la fuente base del documento a un 62.5% del tamaño de la fuente predeterminado del navegador, que generalmente es de 16px.
@@ -40,26 +26,58 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 
 /* ...................................................................................... */
 
-/* Reseteo General*/
+html {
+    font-size: 62.5%;
+    /*------------------------------------------------------------*/
+    box-sizing: border-box;
+    /* esto permite que el relleno no afecte el valor de la caja */
 
+    /* efecto scroll */
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    font-size: 16px; /*1rem = 10px */
+    background: linear-gradient(to top, var(--grisClaro) 0%, var(--Blanco) 100%);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    text-align: center;
+}
 
 /* Custom property */
-:root{
-    --PrimaryColor:orange;
-    --secondColor:rgb(15, 134, 138);
-    --Blanco:white;
-    --Oscuro:black;
-    --Gris:grey;
+:root {
+    --PrimaryColor: orange;
+    --secondColor: rgb(15, 134, 138);
+    --Blanco: white;
+    --Oscuro: black;
+    --Gris: grey;
+    --grisClaro: #dfe9f3;
 }
-* {
-    box-sizing: border-box;
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
     text-decoration: none;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.container{
+.container {
+    /* se coloca max para que los elementos no sobrepasen su tamaño y solo crescan el tamaño disponible  */
     max-width: 120rem;
     margin: 0 auto;
 }
@@ -74,7 +92,6 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 
 .header h1 {
     text-align: center;
-    font-size: 2.5rem;
     padding: 1rem;
 }
 
@@ -93,7 +110,6 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 
 .navbar ul li {
     display: inline-block;
-    padding: 1rem 0;    
     padding: 1rem 7rem;
 }
 
@@ -116,6 +132,7 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 .section__presentacion {
     display: flex;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../Img/hero.jpg);
+    /* background-image: url(../Img/hero.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 30rem;
@@ -123,9 +140,26 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    padding: 2rem;
+
+    /* otra forma de realizar la trasparencia de la imagen */
+
+    /* position: relative; */
+
+    /* se coloca position relative para el que el elemento hijo se posiciones abosolutamente en el padre */
 }
 
+/* .pressentacion__content{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+} */
+
 .pressentacion__content h2 {
+
     color: var(--Blanco);
     font-weight: 800;
     margin-bottom: 4rem;
@@ -155,9 +189,10 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
     padding: 0.5rem 3rem;
     color: var(--Blanco);
     font-weight: 800;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     transition-property: background-color border-radius;
     transition-duration: 1000ms;
+    text-transform: uppercase;
 
 }
 
@@ -169,82 +204,259 @@ Trabajar con rem y em permite que el diseño sea más flexible y accesible, ya q
 
 /* Estilos main */
 
-.content{
+.content {
     box-shadow: 0 0 0.4rem 0 var(--Gris);
     padding: 5rem;
     width: 80%;
     margin: 0 auto;
 }
 
-.main{
+.main {
     text-align: center;
 }
 
-.main h2{
+.main h2 {
     margin-bottom: 3rem;
-    
+
 }
 
+/* Estilos servicios */
 .services__content{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: center;
     align-items: center;
     column-gap: 1rem;
-}
+} 
 
-.services__content section h3{
-    font-size: 1.4rem;
+.services__content section h3 {
     margin-bottom: 3rem;
     font-weight: 300;
     color: var(--secondColor);
 }
 
-.services__content section .item{
-    display: inline-block;
-    font-size: 2rem;
+
+.services__content section .item {
+    display: flex;
+    height: 15rem;
+    width: 15rem;
     background-color: var(--PrimaryColor);
-    color: black;
-    padding: 6rem;
-    border-radius: 100%;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.services__content section{
+    /* este display flex coloca todo uno al lado de otro pero utilizadno flex direction column lo arreglamos  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__content section .item a{
+    font-size: 2rem;
+    color: var(--Oscuro);
+    padding: .3rem;
+}
+
+.services__content section p{
+    line-height: 2;
+    margin-bottom: 4rem;
+}
+
+/* Estilos contacto */
+
+.Contactos{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+}
+
+.Contactos h3.title_contecto{
+    font-size: 2.8rem;
+
+}
+
+.formulario{
+    background-color: var(--Gris);
+    width: min(70rem, 100%); /* utiliza el valor mas pequeño */
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--PrimaryColor);
+    font-weight: 700;
     margin-bottom: 2rem;
 }
 
-.services__content section .Aplicaciones_Moviles{
+
+.btn-2{
     display: inline-block;
-    font-size: 2rem;
+    background-color: var(--secondColor);
+    padding: 0.5rem 3rem;
+    color: var(--Blanco);
+    font-weight: 800;
+    border-radius: 0.5rem;
+    transition-property: background-color border-radius;
+    transition-duration: 1000ms;
+    text-transform: uppercase;
+}
+
+.btn-2:hover{
     background-color: var(--PrimaryColor);
-    padding: 5.5rem 4rem;
-    border-radius: 100% 100%;
-    margin-bottom: 2rem;
-
+    color: var(--Oscuro);
+    border-radius: 0;
 }
 
-.services__content section .Aplicaciones_Moviles a{
-    color: black;
-    padding: 0.5rem;
+.campos textarea{
+    height: 20rem;
 }
+
+footer{
+    text-align: center;
+    padding: 1rem;
+}
+
+/* efecto scroll */
+.header, .content, .Contactos, .section__presentacion, footer{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+
+
 
 
 /* practica responsive media query */
 
 /* responsive Iphone XR */
 
-@media (max-width:480px ) {
-    .navbar ul li{
+/* este diseño utilice el enfoque desktop first */
+
+
+@media (max-width:768px) {
+    .navbar ul li {
         display: flex;
         flex-direction: column;
     }
 
-    .navbar ul li a{
+    .navbar ul li:hover {
+        background-color: var(--PrimaryColor);
+    }
+
+    .navbar ul li a {
         margin: 0;
         padding: 0;
     }
 
-    .navbar ul li a:hover{
+    .navbar ul li a:hover {
         margin: 0;
         padding: 0;
     }
 
+    .btn-1 {
+        width: 90%;
+    }
 
+    .services__content {
+        display: grid;
+        grid-template-columns:repeat(1,1fr);
+    }
+
+    .campos{
+        margin-bottom: 1rem;
+    }
+    
+    .campos label{
+        color: var(--Blanco);
+        font-weight: bold;
+        margin-bottom: .5rem;
+        display: block;
+    }
+    
+    .text{
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: .5rem;
+    }
+
+    .btn-2{
+        width: 100%;
+        display: inline-block;
+        background-color: var(--secondColor);
+        padding: 0.5rem 3rem;
+        color: var(--Blanco);
+        font-weight: 800;
+        border-radius: 0.5rem;
+        transition-property: background-color border-radius;
+        transition-duration: 1000ms;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    .btn-2:hover{
+        background-color: var(--PrimaryColor);
+        color: var(--Oscuro);
+        border-radius: 0;
+    }
+
+   
+
+
+
+}
+
+@media screen and (min-width:768px) and (max-width:1440px) {
+    
+    .campos{
+        margin-bottom: 1rem;
+    }
+    
+    .campos label{
+        color: var(--Blanco);
+        font-weight: bold;
+        margin-bottom: .5rem;
+        display: block;
+    }
+    
+    .text{
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: .5rem;
+    }
+
+    /* como posicionar grip en filas o columnas  */
+    .contenedor__campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto auto 20rem);
+        column-gap: 1rem;
+    }
+    
+    .campos:nth-child(3){
+        grid-column: 1 / 3;
+    }
+    
+    .campos:nth-child(4){
+        grid-column: 1 / 3;
+    }
+    
+    
+    .content_btn-2{
+        display: flex;
+        flex-direction: row-reverse;
+    
+    }
+    /* ----------------------------------------- */
+    
 }
